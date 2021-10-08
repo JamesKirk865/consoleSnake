@@ -44,7 +44,6 @@ void spawn(){
 
 bool move(){
 	switch(mvmnt){
-		int x,y;
 		case 'w':
 			inert='w';
 			if(map[sn[1][len]-1][sn[0][len]]=='3'){
@@ -165,11 +164,9 @@ bool move(){
 return true;
 }
 
-void gotoxy(int xpos, int ypos){
-	COORD scrn;    
+void gotoxy(int xpos, int ypos){ 
 	HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
-	scrn.X = xpos; scrn.Y = ypos;
-	SetConsoleCursorPosition(hOuput,scrn);
+	SetConsoleCursorPosition(hOuput,{xpos,ypos});
 }
 
 void draw(){
